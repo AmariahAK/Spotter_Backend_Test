@@ -1,10 +1,15 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework.decorators import api_view
 from .serializers import TripInputSerializer
 from .models import Trip, LogSheet
 from eld.utils import ELDLogGenerator
 from datetime import datetime
+
+@api_view(['GET'])
+def health_check(request):
+    return Response({"status": "healthy"}, status=200)
 
 class PlanTripView(APIView):
     def post(self, request):
