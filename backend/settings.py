@@ -107,6 +107,5 @@ LOGGING = {
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Set your OpenRouteService API key here
 OPENROUTE_API_KEY = os.getenv('OPENROUTE_API_KEY', '')
 print(f"Loaded API Key: {OPENROUTE_API_KEY}")

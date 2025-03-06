@@ -13,7 +13,7 @@ class Trip(models.Model):
 class LogSheet(models.Model):
     trip = models.ForeignKey(Trip, related_name='log_sheets', on_delete=models.CASCADE)
     date = models.DateField()
-    log_data = models.JSONField()  # {grid: [], events: [], totals: {}}
+    log_data = models.JSONField() 
     
     def __str__(self):
         return f"Log for {self.date} - {self.trip}"
